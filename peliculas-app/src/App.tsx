@@ -10,6 +10,7 @@ import FormularioTexto from "./FormularioTexto";
 import EjemploUseEffect from "./EjemploUseEffect";
 import ValorContext from "./ValorContext";
 import Abuelo from "./Abuelo";
+import ErrorBoundary from "./ErrorBoundary";
 
 function App() {
   const [texto, setTexto] = useState("");
@@ -33,13 +34,28 @@ function App() {
 
   const calificaciones = [
     {nombre: 'Felipe', calificacion: 75},
-    {nombre: 'Claudia', calificacion: 85},
+    {nombre: 'Claudia', calificacion: -1},
     {nombre: 'Roberto', calificacion: 95},
   ];
 
   return (
     <>
       <h1>Hola Mundo!</h1>
+
+      {calificaciones.map(cal => 
+        <ErrorBoundary key={cal.nombre} errorUI={<h3>Hubo un error al mostrar la califación</h3>} >
+          <ContenidoDinamico {...cal} />
+        </ErrorBoundary>
+       )}
+
+      
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
       <ValorContext.Provider value={texto}>
         <Abuelo />
@@ -54,15 +70,7 @@ function App() {
       </div>
 
       {checked ? <EjemploUseEffect /> : null}
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      {calificaciones.map(cal => <ContenidoDinamico key={cal.nombre} {...cal} /> )}
+      
 
       <ProyectarContenido2
         parteSuperior={<span>Esta es la parte de arriba</span>}

@@ -22,7 +22,7 @@ function ContenidoDinamico(props: any) {
         </div>
       </>
     );
-  } else {
+  } else if (props.calificacion >= 0) {
     return (
       <>
         <div>
@@ -30,6 +30,8 @@ function ContenidoDinamico(props: any) {
         </div>
       </>
     );
+  } else {
+    throw `Ha habido un error con la califación de ${props.nombre}`;
   }
 }
 
