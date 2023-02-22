@@ -10,26 +10,26 @@ function ContenidoDinamico(props: any) {
     return (
       <>
         <div>
-            <h3>Excelente calificación</h3>
+          <h3>{props.nombre}: Excelente calificación</h3>
         </div>
       </>
     );
   } else if (props.calificacion >= 80) {
     return (
-        <>
-          <div>
-              <h3>Muy bien hecho</h3>
-          </div>
-        </>
-      );
+      <>
+        <div>
+          <h3>{props.nombre}: Muy bien hecho</h3>
+        </div>
+      </>
+    );
   } else {
     return (
-        <>
-          <div>
-              <h3>lol ...</h3>
-          </div>
-        </>
-      );
+      <>
+        <div>
+          <h3>{props.nombre}: lol ...</h3>
+        </div>
+      </>
+    );
   }
 }
 

@@ -27,10 +27,18 @@ function App() {
     setTexto(e.currentTarget.value);
   };
 
+  const calificaciones = [
+    {nombre: 'Felipe', calificacion: 75},
+    {nombre: 'Claudia', calificacion: 85},
+    {nombre: 'Roberto', calificacion: 95},
+  ];
+
   return (
     <>
       <h1>Hola Mundo!</h1>
-      <ContenidoDinamico calificacion={5}/>
+
+      {calificaciones.map(cal => <ContenidoDinamico key={cal.nombre} {...cal} /> )}
+
       <ProyectarContenido2
         parteSuperior={<span>Esta es la parte de arriba</span>}
         parteIntermedia={<EjemploReloj/>}
