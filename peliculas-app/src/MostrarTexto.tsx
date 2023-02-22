@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function MostrarTexto(props: mostrarTextoProps) {
   return (
     <>
@@ -12,4 +14,9 @@ interface mostrarTextoProps {
 
 MostrarTexto.defaultProps = {
     texto: 'valor por defecto defaultProps'
+}
+
+// para user PropTypes
+MostrarTexto.propTypes = {
+    texto: PropTypes.string.isRequired
 }
