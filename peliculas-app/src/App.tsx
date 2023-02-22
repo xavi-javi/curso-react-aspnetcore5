@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import MostrarTexto from "./MostrarTexto";
 
 function App() {
   const [texto, setTexto] = useState('');
@@ -27,9 +28,7 @@ function App() {
       <h1>Hola Mundo!</h1>
       <button onClick={manejarClick}>Click evento</button>      
       <input type="text" onKeyUp={manejarKeyUp} />
-      <div>
-        El texto ingresado es: {texto}
-      </div>
+      <MostrarTexto texto={texto} />
       <h3>{subtitulo.toUpperCase()}</h3>
       <h4>El doble de 3 es {duplicar(3)}</h4>
       <img alt="Logo React" src={imagenURL}></img>
