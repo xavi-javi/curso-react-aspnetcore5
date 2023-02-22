@@ -8,36 +8,42 @@ import EjemploReloj from "./EjemploReloj";
 import ContenidoDinamico from "./ContenidoDinamico";
 import FormularioTexto from "./FormularioTexto";
 import EjemploUseEffect from "./EjemploUseEffect";
+import ValorContext from "./ValorContext";
+import Abuelo from "./Abuelo";
 
 function App() {
-  // const [texto, setTexto] = useState("");
+  const [texto, setTexto] = useState("");
   const [checked, setChecked] = useState(true);
 
-  // const subtitulo = "Este es un subtitulo";
+  const subtitulo = "Este es un subtitulo";
 
-  // const duplicar = (valor: number) => valor * 2;
+  const duplicar = (valor: number) => valor * 2;
 
-  // const imagenURL =
-  //   "https://coder.clothing/images/stories/virtuemart/product/reactjs-logo-sticker.jpg";
+  const imagenURL =
+    "https://coder.clothing/images/stories/virtuemart/product/reactjs-logo-sticker.jpg";
 
-  // const manejarClick = () => {
-  //   console.log("click");
-  // };
+  const manejarClick = () => {
+    console.log("click");
+  };
 
-  // const manejarKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
-  //   console.log(e.currentTarget.value);
-  //   setTexto(e.currentTarget.value);
-  // };
+  const manejarKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    console.log(e.currentTarget.value);
+    setTexto(e.currentTarget.value);
+  };
 
-  // const calificaciones = [
-  //   {nombre: 'Felipe', calificacion: 75},
-  //   {nombre: 'Claudia', calificacion: 85},
-  //   {nombre: 'Roberto', calificacion: 95},
-  // ];
+  const calificaciones = [
+    {nombre: 'Felipe', calificacion: 75},
+    {nombre: 'Claudia', calificacion: 85},
+    {nombre: 'Roberto', calificacion: 95},
+  ];
 
   return (
     <>
       <h1>Hola Mundo!</h1>
+
+      <ValorContext.Provider value={texto}>
+        <Abuelo />
+      </ValorContext.Provider>
 
       <div>
         <input
@@ -56,7 +62,7 @@ function App() {
       <br />
       <br />
       <br />
-      {/* {calificaciones.map(cal => <ContenidoDinamico key={cal.nombre} {...cal} /> )}
+      {calificaciones.map(cal => <ContenidoDinamico key={cal.nombre} {...cal} /> )}
 
       <ProyectarContenido2
         parteSuperior={<span>Esta es la parte de arriba</span>}
@@ -81,7 +87,7 @@ function App() {
           checked={checked}
         />{" "}
         Este es un checkbox
-      </div> */}
+      </div>
     </>
   );
 }
