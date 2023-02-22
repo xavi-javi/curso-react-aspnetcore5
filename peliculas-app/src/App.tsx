@@ -6,6 +6,7 @@ import ProyectarContenido from "./ProyectarContenido";
 import ProyectarContenido2 from "./ProyectarContenido2";
 import EjemploReloj from "./EjemploReloj";
 import ContenidoDinamico from "./ContenidoDinamico";
+import FormularioTexto from "./FormularioTexto";
 
 function App() {
   const [texto, setTexto] = useState("");
@@ -50,7 +51,7 @@ function App() {
         </>
       </ProyectarContenido>
       <button onClick={manejarClick}>Click evento</button>
-      <input type="text" onKeyUp={manejarKeyUp} />
+      <FormularioTexto manejarKeyUp={manejarKeyUp} />
       <MostrarTexto texto={texto} />
       <h3>{subtitulo.toUpperCase()}</h3>
       <h4>El doble de 3 es {duplicar(3)}</h4>
