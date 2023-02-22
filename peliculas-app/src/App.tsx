@@ -3,7 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  let texto = "";
+  const [texto, setTexto] = useState('');
+  const [checked, setChecked] = useState(false);
 
   const subtitulo = "Este es un subtitulo";
 
@@ -18,7 +19,7 @@ function App() {
 
     const manejarKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
       console.log(e.currentTarget.value);
-      texto = e.currentTarget.value;
+      setTexto(e.currentTarget.value);
     };
 
   return (
@@ -33,7 +34,9 @@ function App() {
       <h4>El doble de 3 es {duplicar(3)}</h4>
       <img alt="Logo React" src={imagenURL}></img>
       <div>
-        <input type="checkbox" checked={true} /> Este es un checkbox
+        <input type="checkbox"
+        onChange={(e) => setChecked(e.currentTarget.checked)}
+        checked={checked} /> Este es un checkbox
       </div>
     </>
   );
