@@ -8,9 +8,13 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
+
+  // encontre que se debe comentar el "<React.StrictMode>"
+  // porque cuando esta esta linea todos los componentes se ejecutan dos veces
+  // y esto paso porque en el "EjemploUseEffect" se ejecutaba dos veces
 );
 
 // If you want to start measuring performance in your app, pass a function

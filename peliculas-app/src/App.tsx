@@ -7,38 +7,56 @@ import ProyectarContenido2 from "./ProyectarContenido2";
 import EjemploReloj from "./EjemploReloj";
 import ContenidoDinamico from "./ContenidoDinamico";
 import FormularioTexto from "./FormularioTexto";
+import EjemploUseEffect from "./EjemploUseEffect";
 
 function App() {
-  const [texto, setTexto] = useState("");
-  const [checked, setChecked] = useState(false);
+  // const [texto, setTexto] = useState("");
+  const [checked, setChecked] = useState(true);
 
-  const subtitulo = "Este es un subtitulo";
+  // const subtitulo = "Este es un subtitulo";
 
-  const duplicar = (valor: number) => valor * 2;
+  // const duplicar = (valor: number) => valor * 2;
 
-  const imagenURL =
-    "https://coder.clothing/images/stories/virtuemart/product/reactjs-logo-sticker.jpg";
+  // const imagenURL =
+  //   "https://coder.clothing/images/stories/virtuemart/product/reactjs-logo-sticker.jpg";
 
-  const manejarClick = () => {
-    console.log("click");
-  };
+  // const manejarClick = () => {
+  //   console.log("click");
+  // };
 
-  const manejarKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    console.log(e.currentTarget.value);
-    setTexto(e.currentTarget.value);
-  };
+  // const manejarKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  //   console.log(e.currentTarget.value);
+  //   setTexto(e.currentTarget.value);
+  // };
 
-  const calificaciones = [
-    {nombre: 'Felipe', calificacion: 75},
-    {nombre: 'Claudia', calificacion: 85},
-    {nombre: 'Roberto', calificacion: 95},
-  ];
+  // const calificaciones = [
+  //   {nombre: 'Felipe', calificacion: 75},
+  //   {nombre: 'Claudia', calificacion: 85},
+  //   {nombre: 'Roberto', calificacion: 95},
+  // ];
 
   return (
     <>
       <h1>Hola Mundo!</h1>
 
-      {calificaciones.map(cal => <ContenidoDinamico key={cal.nombre} {...cal} /> )}
+      <div>
+        <input
+          type="checkbox"
+          onChange={(e) => setChecked(e.currentTarget.checked)}
+          checked={checked}
+        /> Mostrar componente "EjemploUseEffect"
+      </div>
+
+      {checked ? <EjemploUseEffect /> : null}
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      {/* {calificaciones.map(cal => <ContenidoDinamico key={cal.nombre} {...cal} /> )}
 
       <ProyectarContenido2
         parteSuperior={<span>Esta es la parte de arriba</span>}
@@ -63,7 +81,7 @@ function App() {
           checked={checked}
         />{" "}
         Este es un checkbox
-      </div>
+      </div> */}
     </>
   );
 }
