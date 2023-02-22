@@ -30,7 +30,7 @@ function App() {
     <>
       <h1>Hola Mundo!</h1>
       <ProyectarContenido2
-        parteSuperior={<h3>Esta es la parte de arriba</h3>}
+        parteSuperior={<span>Esta es la parte de arriba</span>}
         parteIntermedia={<EjemploReloj/>}
         parteInferior={<div style={{backgroundColor: 'red', width: '50px', height: '50px', marginLeft: '1rem'}}></div>}
       />
