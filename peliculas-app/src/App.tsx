@@ -5,6 +5,7 @@ import MostrarTexto from "./MostrarTexto";
 import ProyectarContenido from "./ProyectarContenido";
 import ProyectarContenido2 from "./ProyectarContenido2";
 import EjemploReloj from "./EjemploReloj";
+import ContenidoDinamico from "./ContenidoDinamico";
 
 function App() {
   const [texto, setTexto] = useState("");
@@ -29,6 +30,7 @@ function App() {
   return (
     <>
       <h1>Hola Mundo!</h1>
+      <ContenidoDinamico calificacion={5}/>
       <ProyectarContenido2
         parteSuperior={<span>Esta es la parte de arriba</span>}
         parteIntermedia={<EjemploReloj/>}
