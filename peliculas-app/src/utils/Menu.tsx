@@ -4,7 +4,7 @@ function Menu() {
     return (
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container-fluid">
-                <NavLink className={(({isActive}) => "navbar-brand" + (isActive ? " active" : ""))} to="/">
+                <NavLink className="navbar-brand" activeClassName="active" to="/">
                     React Películas
                 </NavLink>
                 <button
@@ -21,7 +21,7 @@ function Menu() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavLink className={(({isActive}) => "nav-link" + (isActive ? " active" : ""))} to="/generos">
+                            <NavLink className="nav-link" activeClassName="active" to="/generos">
                                 Generos
                             </NavLink>
                         </li>
