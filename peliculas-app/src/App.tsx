@@ -4,6 +4,7 @@ import ListadoPeliculas from "./peliculas/ListadoPeliculas";
 import PeliculaIndividual from "./peliculas/PeliculaIndividual";
 import { landingPageDTO, pelicula } from "./peliculas/peliculas.model";
 import Button from "./utils/Button";
+import Menu from "./utils/Menu";
 
 function App() {
 
@@ -39,6 +40,8 @@ function App() {
 
   return (
     <>
+      <Menu />
+
       <div className="container py-3">
 
         <Button>Mi botón</Button>
