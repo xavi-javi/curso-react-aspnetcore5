@@ -17,19 +17,19 @@ const rutas = [
 
     {path: '/generos', componente: IndiceGeneros, exact: true},
     {path: '/generos/crear', componente: CrearGenero},
-    {path: '/generos/editar', componente: EditarGenero},
+    {path: '/generos/editar/:id(\\d+)', componente: EditarGenero},
 
     {path: '/actores', componente: IndiceActores, exact: true},
     {path: '/actores/crear', componente: CrearActor},
-    {path: '/actores/editar', componente: EditarActor},
+    {path: '/actores/editar/:id(\\d+)', componente: EditarActor},
 
     {path: '/cines', componente: IndiceCines, exact: true},
     {path: '/cines/crear', componente: CrearCine},
-    {path: '/cines/editar', componente: EditarCine},
+    {path: '/cines/editar/:id(\\d+)', componente: EditarCine},
 
     {path: '/peliculas/filtrar', componente: FiltrarPelicula},
     {path: '/peliculas/crear', componente: CrearPelicula},
-    {path: '/peliculas/editar', componente: EditarPelicula}
+    {path: '/peliculas/editar/:id(\\d+)', componente: EditarPelicula}
 ];
 
 export default rutas;
