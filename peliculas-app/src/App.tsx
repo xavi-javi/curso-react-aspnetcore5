@@ -3,6 +3,7 @@ import "./App.css";
 import ListadoPeliculas from "./peliculas/ListadoPeliculas";
 import PeliculaIndividual from "./peliculas/PeliculaIndividual";
 import { landingPageDTO, pelicula } from "./peliculas/peliculas.model";
+import Button from "./utils/Button";
 
 function App() {
 
@@ -38,11 +39,16 @@ function App() {
 
   return (
     <>
-      <h3>En Cartelera</h3>
-      <ListadoPeliculas peliculas={peliculas.enCartelera} />
+      <div className="container py-3">
 
-      <h3>Próximos Estrenos</h3>
-      <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+        <Button>Mi botón</Button>
+
+        <h3>En Cartelera</h3>
+        <ListadoPeliculas peliculas={peliculas.enCartelera} />
+
+        <h3>Próximos Estrenos</h3>
+        <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+      </div>
     </>
   );
 }
