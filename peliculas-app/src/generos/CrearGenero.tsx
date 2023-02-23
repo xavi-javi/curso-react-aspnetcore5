@@ -20,7 +20,7 @@ function CrearGenero() {
                 nombre: ''
             }} onSubmit={values => {
                 console.log(values);
-            }} validationSchema={Yup.object({ nombre: Yup.string().required('Este campo es requerido')})}
+            }} validationSchema={Yup.object({ nombre: Yup.string().required('Este campo es requerido').primeraLetraMayuscula()})}
             >
                 <Form>
                     <FormGroupText campo="nombre" label="Nombre:" />

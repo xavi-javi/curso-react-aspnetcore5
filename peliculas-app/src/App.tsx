@@ -4,6 +4,9 @@ import IndiceGeneros from "./generos/IndicesGeneros";
 import LandingPage from "./LandingPage";
 import rutas from "./route-config";
 import Menu from "./utils/Menu";
+import configurarValidaciones from "./validaciones";
+
+configurarValidaciones();
 
 function App() {
   return (
