@@ -31,7 +31,7 @@ function App() {
           }
         ]
       });
-    }, 2000);
+    }, 500);
 
     return () => clearTimeout(timerId);
   });
