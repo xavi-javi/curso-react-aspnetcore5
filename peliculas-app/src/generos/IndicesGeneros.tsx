@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
+
 function IndiceGeneros() {
     return (
         <>
-            <h3>Indíce Géneros</h3>
+            <h3>Indice Géneros</h3>
+            <Link to="/generos/crear">Crear Género</Link>
         </>
     );
 }

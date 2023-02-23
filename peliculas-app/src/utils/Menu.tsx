@@ -22,7 +22,27 @@ function Menu() {
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <NavLink className="nav-link" activeClassName="active" to="/generos">
-                                Generos
+                                Géneros
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" activeClassName="active" to="/peliculas/filtrar">
+                                Filtrar Películas
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" activeClassName="active" to="/actores">
+                                Actores
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" activeClassName="active" to="/cines">
+                                Cines
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" activeClassName="active" to="/peliculas/crear">
+                                Crear Película
                             </NavLink>
                         </li>
                     </ul>
