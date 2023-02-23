@@ -1,10 +1,12 @@
+import { NavLink } from "react-router-dom";
+
 function Menu() {
     return (
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container-fluid">
-                <a className="navbar-brand" href="/">
+                <NavLink className={(({isActive}) => "navbar-brand" + (isActive ? " active" : ""))} to="/">
                     React Películas
-                </a>
+                </NavLink>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -19,9 +21,9 @@ function Menu() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link" href="/generos">
+                            <NavLink className={(({isActive}) => "nav-link" + (isActive ? " active" : ""))} to="/generos">
                                 Generos
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </div>
