@@ -11,6 +11,7 @@ import LandingPage from "./LandingPage";
 import CrearPelicula from "./peliculas/CrearPelicula";
 import EditarPelicula from "./peliculas/EditarPelicula";
 import FiltrarPelicula from "./peliculas/FiltrarPelicula";
+import RedireccionarALanding from "./utils/RedireccionarALanding";
 
 const rutas = [
     {path: '/', componente: LandingPage, exact: true},
@@ -29,7 +30,11 @@ const rutas = [
 
     {path: '/peliculas/filtrar', componente: FiltrarPelicula},
     {path: '/peliculas/crear', componente: CrearPelicula},
-    {path: '/peliculas/editar/:id(\\d+)', componente: EditarPelicula}
+    {path: '/peliculas/editar/:id(\\d+)', componente: EditarPelicula},
+
+    // Para cualquier ruta, es decir, aqui entran las rutas no encontradas
+    // Debe ir al final
+    {path: '*', componente: RedireccionarALanding},
 ];
 
 export default rutas;
