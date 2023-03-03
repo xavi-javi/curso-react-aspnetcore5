@@ -4,6 +4,7 @@ import Button from "../utils/Button";
 import FormGroupText from "../utils/FormGroupText";
 import { cineCreacionDTO } from "./cines.model";
 import * as Yup from "yup";
+import Mapa from "../utils/Mapa";
 
 function FormularioCines(props: FormularioCinesProps) {
     return (
@@ -15,6 +16,9 @@ function FormularioCines(props: FormularioCinesProps) {
             {(formikProps) => (
                 <Form>
                     <FormGroupText campo="nombre" label="Nombre:" />
+                    <div className="my-3">
+                        <Mapa/>
+                    </div>
                     <Button type="submit" disabled={formikProps.isSubmitting} >Guardar</Button>
                     <Link to="/cines" className="btn btn-seconday ms-3">Cancelar</Link>
                 </Form>
