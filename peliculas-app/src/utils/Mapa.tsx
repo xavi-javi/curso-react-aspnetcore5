@@ -16,7 +16,7 @@ L.Marker.prototype.options.icon = defaultIcon;
 
 function Mapa(props: MapaProps) {
 
-    const [coordenadas, setCoordenadas] = useState<coordenadaDTO[]>([]);
+    const [coordenadas, setCoordenadas] = useState<coordenadaDTO[]>(props.coordendas);
 
     return (
         <>
@@ -25,7 +25,10 @@ function Mapa(props: MapaProps) {
                     attribution="React Películas"
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <ClickMapa setPunto={coordenadasParam => {setCoordenadas([coordenadasParam])}}></ClickMapa>
+                <ClickMapa setPunto={coordenada => {
+                        setCoordenadas([coordenada])
+                        props.manejarClickMapa(coordenada)
+                }}></ClickMapa>
                 {
                     coordenadas.map(coordernada =>
                         <Marcador key={coordernada.lat + coordernada.lng} {...coordernada} />
@@ -37,6 +40,8 @@ function Mapa(props: MapaProps) {
 
 interface MapaProps {
     height: string;
+    coordendas: coordenadaDTO[];
+    manejarClickMapa(coordenada: coordenadaDTO): void;
 }
 
 Mapa.defaultProps = {
@@ -45,13 +50,13 @@ Mapa.defaultProps = {
 
 function ClickMapa(props: ClickMapaProps) {
     useMapEvent('click', (e) => {
-        props.setPunto({lng: e.latlng.lng, lat: e.latlng.lat});
+        props.setPunto({lat: e.latlng.lat, lng: e.latlng.lng});
     });
     return null;
 }
 
 interface ClickMapaProps {
-    setPunto(coordenadas: coordenadaDTO): void;
+    setPunto(coordenada: coordenadaDTO): void;
 }
 
 function Marcador(props: coordenadaDTO) {
